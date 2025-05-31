@@ -1,0 +1,312 @@
+/* frontend/src/assets/main.css */
+
+:root {
+  /* Paleta Pytholingo */
+  --py-blue-dark: #3776AB;
+  --py-blue-light: #4B8BBE;
+  --py-yellow: #FFD43B;
+
+  /* Cores Primárias e de Ação */
+  --color-brand-primary: var(--py-blue-dark);
+  --color-brand-primary-hover: #2c608a;
+  --color-brand-secondary: var(--py-yellow);
+  --color-brand-tertiary: var(--py-blue-light);
+
+  --color-success: #4CAF50;
+  --color-danger: #F44336;
+  --color-warning: #FF9800;
+  --color-info: #2196F3;
+  --color-accent-gold: #C0A062;
+
+  /* Cores de Fundo */
+  --color-bg-page: #F0F4F8;
+  --color-bg-light: #FFFFFF;
+  --color-bg-dark: #22272E;
+  --color-bg-hover-subtle: #E6ECF0;
+  --color-bg-card: var(--color-bg-light);
+
+  /* Cores de Texto */
+  --color-text-primary: #1D2C3A;
+  --color-text-secondary: #5A6C7C;
+  --color-text-on-brand-primary: #FFFFFF;
+  --color-text-on-dark-bg: #E0E6EB;
+  --color-text-link: var(--py-blue-dark);
+  --color-text-link-hover: var(--color-brand-primary-hover);
+
+  /* Cores de Borda */
+  --color-border: #D1D9E0;
+  --color-border-subtle: #E0E6EB;
+
+  /* Fontes Pytholingo */
+  --font-sans-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono-code: 'Fira Code', 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --font-serif-display: 'Georgia', serif;
+
+  /* Variáveis de UI já existentes, remapeadas ou mantidas */
+  --primary-color: var(--color-brand-primary);
+  --primary-hover-color: var(--color-brand-primary-hover);
+  --secondary-color: #8698A7;
+  --accent-color: var(--color-brand-secondary);
+  --success-color: var(--color-success);
+  --danger-color: var(--color-danger);
+  --warning-color: var(--color-warning);
+  --info-color: var(--color-info);
+
+  --link-color: var(--color-text-link);
+  --link-hover-color: var(--color-text-link-hover);
+  --link-hover-bg: rgba(55, 118, 171, 0.1);
+  --text-color-primary: var(--color-text-primary);
+  --text-color-secondary: var(--color-text-secondary);
+  --text-on-primary: var(--color-text-on-brand-primary);
+
+  /* Sombras */
+  --box-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  /* Bordas */
+  --border-color: var(--color-border);
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+
+  /* Espaçamento e Layout */
+  --header-height: 70px;
+  --content-max-width: 1320px;
+  --mobile-padding: 15px;
+  --desktop-padding: 20px;
+
+  --padding-xxs: 4px;
+  --padding-xs: 8px;
+  --padding-sm: 12px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+  --padding-xl: 32px;
+  --padding-xxl: 48px;
+
+  /* Cores específicas para componentes (exemplo) */
+  --admin-link-color: var(--color-accent-gold);
+  --admin-link-hover-bg: #ab8a4f;
+
+  /* Mapeamento para variáveis antigas para garantir compatibilidade inicial */
+  --bg-page: var(--color-bg-page);
+  --bg-light: var(--color-bg-light);
+  --bg-dark: var(--color-bg-dark);
+  --bg-hover-subtle: var(--color-bg-hover-subtle);
+  --text-on-dark-bg: var(--color-text-on-dark-bg);
+}
+
+/* Estilos Globais para Corpo e Links */
+body {
+  font-family: var(--font-sans-ui);
+  color: var(--text-color-primary);
+  background-color: var(--bg-page);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration-color: var(--link-hover-color);
+}
+
+/* Estilos Globais para Formulários */
+.form-group {
+  margin-bottom: var(--padding-md);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--padding-sm) var(--padding-md);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color-primary);
+  background-color: var(--color-bg-light);
+  background-clip: padding-box;
+  border: 1px solid var(--border-color);
+  appearance: none;
+  border-radius: var(--border-radius-md);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  border-color: var(--color-brand-primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(55, 118, 171, 0.25);
+}
+
+.form-control.is-invalid {
+  border-color: var(--danger-color);
+}
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 54, 54, 0.25);
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: var(--padding-xxs);
+  font-size: 0.875em;
+  color: var(--danger-color);
+}
+
+.api-error-message,
+.error-message {
+  color: var(--danger-color);
+  background-color: #fddfe2;
+  border: 1px solid #f7c5cb;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--padding-md);
+  font-size: 0.9em;
+}
+
+.success-message {
+  color: #0b602f;
+  background-color: #d1f7e1;
+  border: 1px solid #b8f0d2;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--padding-md);
+  font-size: 0.9em;
+}
+
+.info-message {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--padding-md);
+  font-size: 0.9em;
+}
+
+.form-check-input {
+  margin-right: var(--padding-xs);
+  vertical-align: middle;
+}
+.form-check-label {
+  vertical-align: middle;
+  font-size: 0.95em;
+  color: var(--text-color-secondary);
+}
+
+/* Estilos Globais para Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: var(--padding-sm) var(--padding-lg);
+  font-size: 0.95rem;
+  border-radius: var(--border-radius-md);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  color: var(--color-text-on-brand-primary);
+  background-color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-brand-primary-hover);
+  border-color: var(--color-brand-primary-hover);
+}
+
+.btn-secondary {
+  color: var(--color-text-primary);
+  background-color: var(--color-border);
+  border-color: var(--color-border);
+}
+.btn-secondary:hover {
+  background-color: #c8d0d8;
+  border-color: #bec8d0;
+}
+
+.btn-accent {
+  color: var(--color-text-primary);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-accent:hover {
+  background-color: #e6c030;
+  border-color: #d4b02a;
+}
+.btn-danger {
+  color: var(--color-text-on-brand-primary);
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+.btn-danger:hover {
+  background-color: #d32f2f;
+  border-color: #c02a2a;
+}
+
+/* Estilos para o container principal das views */
+.view-card-container {
+  background-color: var(--color-bg-card);
+  padding: var(--padding-lg) var(--padding-xl);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-medium);
+}
+
+/* Estilos para indicadores de loading e mensagens de erro/info globais */
+.loading-indicator p,
+.error-message p,
+.info-message p,
+.success-message p {
+  margin: 0;
+}
+
+.form-feedback {
+  padding: var(--padding-sm) var(--padding-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--padding-md);
+  font-size: 0.9em;
+}
+
+/* Estilos para código */
+pre, code, kbd, samp {
+  font-family: var(--font-mono-code);
+  font-size: 0.95em;
+  background-color: var(--color-bg-hover-subtle);
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+}
+
+.code-block {
+  display: block;
+  padding: var(--padding-md);
+  margin: var(--padding-md) 0;
+  overflow-x: auto;
+  background-color: #282c34;
+  color: #abb2bf;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-mono-code);
+  font-size: 0.9em;
+}
