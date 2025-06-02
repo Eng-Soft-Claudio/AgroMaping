@@ -34,7 +34,7 @@ services:
       dockerfile: Dockerfile
     container_name: agro-backend
     env_file:
-      - ./backend/.env 
+      - ./backend/.env
     ports:
       - "${BACKEND_PORT:-8000}:8000" 
     depends_on:

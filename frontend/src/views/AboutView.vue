@@ -1,88 +1,77 @@
 <template>
   <div class="view-card-container about-view-layout">
     <header class="about-header">
-      <h1>Sobre o Projeto Pytholingo</h1>
+      <h1>Drone & Agro</h1>
       <p class="subtitle">
-        Uma plataforma gamificada para aprender Python, do iniciante ao profissional.
+        Soluções tecnológicas e serviços especializados para o agronegócio.
       </p>
     </header>
 
     <section class="about-section">
       <h2>Objetivo</h2>
       <p class="objective-text">
-        O Pytholingo foi desenvolvido para tornar o aprendizado da linguagem Python acessível,
-        envolvente e eficiente. Utilizando princípios de gamificação, repetição espaçada e imersão
-        prática gradual, nosso objetivo é fornecer uma fundação sólida e divertida para quem deseja
-        dominar Python, economizando tempo e tornando o estudo uma jornada motivadora.
+        A Drone & Agro tem como missão fornecer serviços inovadores e de alta qualidade no setor agrícola, 
+        com foco em mapeamento aéreo, pulverização de culturas, combate a pragas (como ervas daninhas e insetos), 
+        manutenção de drones, reposição de peças e capacitação profissional. Atuamos para aumentar a eficiência, 
+        sustentabilidade e produtividade no campo por meio da tecnologia.
       </p>
     </section>
 
     <section class="about-section">
-      <h2>Tecnologias Utilizadas</h2>
+      <h2>Serviços Oferecidos</h2>
+      <ul>
+        <li>Mapeamento agrícola por drones</li>
+        <li>Pulverização agrícola automatizada</li>
+        <li>Combate a ervas daninhas e insetos</li>
+        <li>Manutenção corretiva e preventiva de drones</li>
+        <li>Reposição de peças e acessórios para drones agrícolas</li>
+        <li>Cursos de pilotagem de drones (com certificação)</li>
+        <li>Capacitação para uso de defensivos agrícolas</li>
+        <li>Treinamento técnico para manutenção de drones</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Tecnologias e Equipamentos</h2>
       <div class="tech-grid">
         <div class="tech-card">
-          <h3>Backend</h3>
+          <h3>Drones Agrícolas</h3>
           <ul>
-            <li><strong>Python 3.12+</strong></li>
-            <li><strong>FastAPI</strong></li>
-            <li><strong>SQLAlchemy & Alembic</strong></li>
-            <li><strong>Pydantic</strong></li>
-            <li><strong>Passlib & python-jose</strong></li>
-            <li><strong>PostgreSQL</strong></li>
-            <li><strong>Pytest</strong></li>
+            <li><strong>DJI Agras T20, T30 e T40</strong></li>
+            <li><strong>Autel EVO II Dual</strong></li>
+            <li><strong>Drones customizados com RTK</strong></li>
           </ul>
         </div>
         <div class="tech-card">
-          <h3>Frontend</h3>
+          <h3>Sistemas & Software</h3>
           <ul>
-            <li><strong>Vue.js 3 (Composition API)</strong></li>
-            <li><strong>TypeScript</strong></li>
-            <li><strong>Vite</strong></li>
-            <li><strong>Pinia & Vue Router</strong></li>
-            <li><strong>VeeValidate & Yup</strong></li>
-            <li><strong>Vue-Toastification</strong></li>
+            <li><strong>Software de planejamento de voo</strong></li>
+            <li><strong>Processamento de imagens com IA</strong></li>
+            <li><strong>Sistemas de telemetria em tempo real</strong></li>
           </ul>
         </div>
         <div class="tech-card">
-          <h3>DevOps & Infraestrutura</h3>
+          <h3>Capacitação & Certificação</h3>
           <ul>
-            <li><strong>Docker & Docker Compose</strong></li>
-            <li><strong>ESLint / Linters</strong></li>
+            <li><strong>Instrutores certificados ANAC</strong></li>
+            <li><strong>Material didático próprio</strong></li>
+            <li><strong>Certificados válidos nacionalmente</strong></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="about-section">
-      <h2>Funcionalidades Implementadas (Base)</h2>
-      <h3>Usuário Comum:</h3>
-      <ul>
-        <li>Registro, Login e Logout (JWT)</li>
-        <li>Visualização e Edição do próprio perfil</li>
-        <li>Alteração da própria senha</li>
-        <li>Recuperação de senha</li>
-        <li>Deleção da própria conta</li>
-      </ul>
-      <h3 class="features-subtitle">Funcionalidades de Administrador:</h3>
-      <ul>
-        <li>Listagem de todos os usuários</li>
-        <li>Criação de novos usuários</li>
-        <li>Edição completa de usuários (incluindo status e permissões)</li>
-        <li>Deleção de usuários</li>
-      </ul>
-    </section>
-
     <section class="about-section contact-info">
-      <h2>Contato e Repositório</h2>
+      <h2>Contato</h2>
       <p>
-        Feedback e sugestões são sempre bem-vindos.
+        Para orçamentos, agendamentos ou dúvidas, entre em contato conosco.
         <a
-          href="https://github.com/Eng-Soft-Claudio/CRUD-Template"
+          href="https://www.instagram.com/brothersvideodrone?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-accent btn-inline"
         >
-          Visite o Repositório no GitHub
+          Visite nosso Instagram!
         </a>
       </p>
     </section>

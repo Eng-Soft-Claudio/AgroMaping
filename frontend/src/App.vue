@@ -49,7 +49,7 @@ const handleLogout = () => {
       <div class="nav-container">
         <div class="logo-area">
           <RouterLink to="/" class="project-name" @click="closeMobileMenu"
-            >Pytholingo</RouterLink
+            >Drone & Agro</RouterLink
           >
         </div>
 
@@ -98,7 +98,7 @@ const handleLogout = () => {
     </main>
 
     <footer class="app-footer">
-      <p>© {{ new Date().getFullYear() }} Pytholingo. Todos os direitos reservados.</p>
+      <p>© {{ new Date().getFullYear() }} Drone & Agro. Todos os direitos reservados.</p>
     </footer>
   </div>
 </template>

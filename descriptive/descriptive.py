@@ -20,7 +20,7 @@ import sys
 # =========================
 
 # Caminho absoluto para o diretório raiz do projeto.
-PASTA_RAIZ_PROJETO = '/run/media/claudiodelimatosta/Desenvolvimento/CRUD-Template/'
+PASTA_RAIZ_PROJETO = '/run/media/claudiodelimatosta/Desenvolvimento1/AgroMaping'
 
 # Nome do arquivo de saída
 NOME_BASE_ARQUIVO_SAIDA = 'Codigo_Fonte.txt'
@@ -29,13 +29,18 @@ NOME_BASE_ARQUIVO_SAIDA = 'Codigo_Fonte.txt'
 PASTAS_IGNORADAS = (
     '__pycache__', 'descriptive', '.pytest_cache',
     '.git', '.idea', 'node_modules', '.venv', 'venv'
-)
+    )
 
 # Extensões e arquivos a serem monitorados
 EXTENSOES_INCLUIDAS = ('.py', '.ts', '.vue')
-ARQUIVOS_EXTRAS = ('env.py', '595de6c503ca_create_user_table.py', 'alembic.ini', '.gitignore', '.env', 'requirements.txt', 'pytest.ini', 'entrypoint.sh', 'Dockerfile', 'docker-compose.yml', '.env.exemple', '.env.test', 'package.json')
+ARQUIVOS_EXTRAS = (
+    'env.py', '2d52dcb0afc1_create_agriculturalarea_selinux_fix.py',
+    'alembic.ini', '.gitignore', '.env', 'requirements.txt',
+    'pytest.ini', 'entrypoint.sh', 'Dockerfile', 'docker-compose.yml',
+    '.env.exemple', '.env.test', 'package.json'
+    )
 
-# Caminho do diretório onde o script está localizado
+# Detecta o diretório atual do script para salvar o arquivo de saída
 if getattr(sys, 'frozen', False):
     DIRETORIO_DO_SCRIPT = os.path.dirname(sys.executable)
 else:
@@ -98,48 +103,10 @@ def gerar_livro_codigo(pasta_raiz: str, arquivo_saida: str, pastas_ignoradas: tu
 
     try:
         with open(arquivo_saida, 'w', encoding='utf-8') as f_out:
-            escrever_capa_com_logo(f_out)
             escrever_sumario(f_out, capitulos)
             escrever_capitulos(f_out, capitulos)
     except Exception as e:
         print(f"ERRO ao escrever o arquivo final: {e}")
-
-def escrever_capa_com_logo(arquivo):
-    """
-    Escreve a capa no arquivo de saída.
-
-    Args:
-        arquivo (file object): Objeto de arquivo já aberto para escrita.
-    """
-    largura = 80
-    margem = 2
-    interior = largura - 2 * margem
-
-    logo_python = [
-        "     ____        _   _                  ",
-        "    |  _ \\ _   _| |_| |__   ___  _ __   ",
-        "    | |_| | | | | __| '_ \\ / _ \\| '_ \\  ",
-        "    |  __/| |_| | |_| | | | (_) | | | | ",
-        "    |_|    \\__, |\\__|_| |_|\\___/|_| |_| ",
-        "           |___/                        "
-    ]
-    altura_logo = len(logo_python)
-    altura_total = altura_logo + 6
-
-    # Topo
-    arquivo.write("#" * largura + "\n")
-    for _ in range(margem - 1):
-        arquivo.write("#" + " " * (largura - 2) + "#\n")
-
-    espaco_superior = (interior - len(logo_python[0])) // 2
-    for linha in logo_python:
-        arquivo.write("#" + " " * margem + " " * espaco_superior + linha.ljust(len(logo_python[0])) +
-                      " " * (interior - len(linha) - espaco_superior) + " " * margem + "#\n")
-
-    for _ in range(margem):
-        arquivo.write("#" + " " * (largura - 2) + "#\n")
-    arquivo.write("#" * largura + "\n\n")
-
 
 
 def escrever_sumario(arquivo, capitulos: list):

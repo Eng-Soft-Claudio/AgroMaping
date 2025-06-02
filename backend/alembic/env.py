@@ -8,6 +8,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import create_engine 
 from sqlalchemy import pool
+from sqlalchemy.dialects import postgresql
 
 from alembic import context
 
@@ -19,14 +20,16 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from app.core.config import settings
 from app.db.base_class import Base
 
-from app.db.models import User 
+from app.db.models.user import User
+from app.db.models.agricultural_area import AgriculturalArea
 
 
 # =======================================================================================================
 # --- Configurações ---                                                                             #####
 # =======================================================================================================
 
-_ = User 
+_ = User
+_ = AgriculturalArea
 
 config = context.config
 
@@ -53,7 +56,7 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    url = settings.DATABASE_URL
+    url = str(settings.DATABASE_URL)
     context.configure(
         url=url,
         target_metadata=target_metadata,
@@ -72,11 +75,13 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
-    connectable = create_engine(settings.DATABASE_URL, poolclass=pool.NullPool)
+    connectable = create_engine(str(settings.DATABASE_URL), poolclass=pool.NullPool)
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata,
+            compare_type=True
         )
 
         with context.begin_transaction():
